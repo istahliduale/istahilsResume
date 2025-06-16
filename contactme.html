@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContactMe</title>
+    <!-- Link to Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Reset body margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Full-page layout */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #011a5515;
+        font-family: "Arial", sans-serif;
+        color: #333;
+      }
+
+      /* Container for the business card */
+      .container {
+        background-color: #3865f909;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+      }
+
+      /* Business Card Styling */
+      .business-card {
+        background-color: #dadada;
+        border: 1px solid #5f37a50f;
+        padding: 5px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        
+      }
+
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap; /* Ensures that elements wrap on smaller screens */
+      }
+
+      .header img {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        margin-right: 20px;
+        max-width: 100%; /* Ensures responsiveness on small screens */
+      }
+
+      .header .details {
+        font-size: 18px;
+        text-align: center; /* Centers text */
+      }
+
+      .header .details h1 {
+        margin: 0;
+        font-size: 26px;
+        color: #333;
+      }
+
+      .header .details p {
+        color: #888;
+        font-size: 16px;
+      }
+
+      .contact {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #444;
+      }
+
+      .contact p {
+        display: flex;
+       flex-wrap: wrap;
+        margin: 10px 0;
+        padding-left: 148px;
+        
+        
+       /* Centers the contact info */
+      }
+
+      .contact p i {
+        margin-right: 10px; /* Space between icon and link */
+        color: #1a73e8; /* Default icon color */
+        transition: color 0.3s ease; /* Smooth transition for icon color change */
+      }
+
+      .contact p i:hover {
+        color: #067cfa; /* Icon color change on hover */
+      }
+
+      /* Separate hover effect for the link */
+      .contact p a {
+        color: #0a0a13; /* Default link color */
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s ease; /* Smooth transition for link color change */
+      }
+
+      .contact p a:hover {
+        color: #1b84ee; /* Darker blue for the link on hover */
+      }
+
+      .contact a {
+        color: #1a73e8; /* Default link color */
+        text-decoration: none;
+        font-size: 16px;
+        padding-left: 5px;
+      }
+
+      .social-icons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: start;
+       
+        padding-left: 15px;
+        justify-content: start; /* Center social icons */
+      }
+
+      .social-icons a {
+        font-size: 24px;
+        color: #1a73e8;
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #0056b3;
+      }
+
+      .footer {
+        margin-top: 30px;
+        border-top: 2px solid #e0e0e0;
+        padding-top: 15px;
+        font-size: 14px;
+        color: #777;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .header img {
+          margin-bottom: 15px;
+          width: 100px; /* Adjust image size for smaller screens */
+        }
+
+        .contact p {
+          font-size: 16px;
+          padding-left: 0; /* Remove padding for mobile devices */
+        }
+
+        .contact p a {
+          font-size: 14px; /* Adjust link size for small screens */
+        }
+
+        .social-icons {
+          flex-direction: column; /* Stack social icons vertically */
+          gap: 15px;
+          justify-content: center; /* Center align social icons */
+        }
+
+        .social-icons a {
+          font-size: 20px; /* Adjust social icon size */
+        }
+      }
+
+      /* Specific adjustments for very small screens */
+      @media (max-width: 390px) { /* iPhone 14 size */
+        .container {
+          padding: 20px;
+          width: 90%;
+        }
+
+        .header img {
+          width: 80px;
+          height: 80px;
+        }
+
+        .header .details h1 {
+          font-size: 22px;
+        }
+
+        .contact p {
+          font-size: 14px;
+          padding-left: 0;
+        }
+
+        .contact p a {
+          font-size: 14px;
+        }
+
+        .social-icons a {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Business Card Section -->
+      <div class="business-card">
+        <div class="header">
+          <img src="2f122ce4-630a-4348-acdc-efc21ad2e604.jpg" alt="Istahil Duale" />
+          <div class="details">
+            <h1>Istahil Duale</h1>
+            <p>Dedicated Worker Seeking Opportunities</p>
+          </div>
+        </div>
+        <hr />
+        <div class="contact">
+          <p>
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:++252633272525">+252633272525</a>
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:istahlidualle45@gmail.com">istahlidualle45@gmail.com</a>
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="https://www.google.com/maps?q=Hargeisa,+Somaliland" target="_blank">
+              Masalaha, Hargeisa Somalia
+            </a>
+          </p>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/istahil-duale-268137271/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer">© 2025 Istahil Duale | All Rights Reserved</div>
+    </div>
+  </body>
+</html>

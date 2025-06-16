@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Resume</title>
+    <style>
+      /* General body styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6; /* Increased line-height for readability */
+        padding-bottom: 70px; /* Ensure space for footer */
+      }
+
+      /* Header styles */
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 3px; 
+      }
+
+      h1 img {
+        width: 250px; /* Set a fixed size for the image */
+        height: 310px; /* Keep the image's height the same as the width */
+        border-radius: 50%; /* Make the image circular */
+        object-fit: cover; /* Ensure the image covers the area without distortion */
+        margin-top: 15px; /* Add some space between the text and image */
+        border: 3px solid #2c3e50; /* Add a subtle border around the image */
+      }
+
+      /* Section headers */
+      h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #2c3e50;
+        padding-bottom: 8px;
+        margin-bottom: 2px; /* Increased margin for spacing */
+      }
+
+      /* Styling for paragraphs */
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 20px; /* Increased margin for more space */
+        line-height: 1.6; /* Increased line-height */
+        padding-left: 1%;
+      }
+
+      /* List styling */
+      ul {
+        list-style-type: none;
+        padding-left: 29px;
+      }
+
+      ul li {
+        font-size: 1.1rem;
+        margin-bottom: 1px; /* Increased margin for more spacing between items */
+      }
+
+      /* Horizontal line styling */
+      hr {
+        border: 0;
+        border-top: 2px solid #bdc3c7;
+        margin: 3px 0; /* Added extra margin for spacing */
+      }
+
+      /* Link styles */
+      a {
+        color: #3498db;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer styling */
+      footer {
+        text-align: center;
+        padding: 0px;
+        background-color: #2c3e50;
+        color: white;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+
+      /* Responsive styling */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        p,
+        ul li {
+          font-size: 1rem;
+        }
+
+        hr {
+          margin: 20px 0;
+        }
+      }
+
+      .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .table {
+        width: 200px;
+        text-align: left;
+      }
+
+      /* Specific class styling */
+      .zusammenfassung,
+      .ausbildung,
+      .berufserfahrung,
+      .fähigkeiten,
+      .berufserfahrung,
+      .kompetenzbewertung,
+      .sonstiges .hobbies {
+        padding-left: 20px; /* Added padding for better alignment */
+        padding-right: 20px; /* Ensured content doesn't touch the edge */
+      }
+
+      .sonstiges {
+        padding-left: 20px; /* Added padding for better alignment */
+        padding-right: 20px;
+      }
+      .hobbies {
+        color: #520707;
+      }
+      .contact {
+        padding-left: 3%;
+        line-height: 1.8;
+      }
+      .contact a {
+        color: #2422a9be;
+        width: max-content;
+        font-size: 22px;
+        position: relative;
+        cursor: pointer;
+        margin: 100px auto;
+      }
+      .contact a::after {
+        content: "";
+        position: absolute;
+        bottom: -0px;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        background-color: rgb(148, 41, 41);
+        transition: 0.3s;
+        transition-timing-function: ease-in-out;
+        transform: scaleX(0);
+      }
+      .contact a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .adress {
+        color: #2422a9be;
+        width: max-content;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .adress::after {
+        content: "";
+        position: absolute;
+        bottom: -0px;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        background-color: rgb(148, 41, 41);
+        transition: 0.3s;
+        transition-timing-function: ease-in-out;
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+
+      .adress:hover::after {
+        transform: scaleX(1);
+      }
+      .contact a,
+      p {
+        line-height: 1;
+      }
+      .zusammenfassung {
+        line-height: 1.6;
+      }
+      .date {
+        padding-left: 78%;
+        line-height: 1.6;
+        margin-top: 25px;
+      }
+      .strong {
+        padding-left: 20px;
+        font-weight: bold;
+      }
+      .bday:hover {
+        transition: font-weight 0.3s ease;
+      }
+
+      .table {
+        width: 37%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+
+      .table th {
+        padding: 3px;
+        text-align: left;
+        padding-left: 70px;
+      }
+
+      .table a {
+        text-decoration: none; /* Remove the default underline */
+        color: #1310bcbe; /* Default text color */
+        position: relative; /* Position relative for the after element */
+        font-size: 19px;
+        cursor: pointer;
+         line-height: 1.3;
+      }
+
+      .table a:hover {
+        color: #007bff; /* Change color on hover */
+      }
+
+      /* Hover underline effect using the ::after pseudo-element */
+      .table a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px; /* Refined positioning for the underline */
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: rgb(143, 39, 39);
+        transition: transform 0.3s ease-in-out;
+        transform: scaleX(0);
+        transform-origin: left center; /* Start scaling from left */
+      }
+
+      .table a:hover::after {
+        transform: scaleX(1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Islahil Aden</h1>
+    <h1><img src="2f122ce4-630a-4348-acdc-efc21ad2e604.jpg" height="250" alt="Photo" /></h1>
+
+    <div class="contact">
+      <p>
+        ☎️
+        <a href="tel:+252633272525">+252633272525</a>
+      </p>
+      <p>
+        💬
+        <a href="https://wa.me/+447771098911">WhatsApp</a>
+      </p>
+      <p>
+        💌
+        <a href="mailto:istahlidualle45@gmail.com">istahlidualle45@gmail.com</a>
+      </p>
+      <p class="adress">
+        📍
+        <a
+          href="https://www.google.com/maps?q=Hargeisa,+Somaliland"
+          target="_blank"
+        >
+          Hargeisa, Somaliland
+        </a>
+      </p>
+    </div>
+    <div class="date" id="current-date"></div>
+
+    <h2 class="zusammenfassung">Summary</h2>
+    <p class="zusammenfassung">
+      Highly motivated and energetic professional with a strong interest in project management and curriculum editing. Skilled in coordinating projects, managing deadlines, and editing educational content to ensure clarity and effectiveness. Adept at working collaboratively and efficiently to deliver high-quality results in educational environments.
+    </p>
+    <p class="strong">
+      Additional documents and more information about me are attached below,
+      with clickable links at the very bottom.
+    </p>
+
+    <h2 class="berufserfahrung">Professional Experience</h2>
+    <ul>
+      <li>
+        <strong>Content Editor / Curriculum Developer, Kaabe Schools (Abaarso Network)</strong><br>
+        January 2025 – Present<br>
+        Collaborate with colleagues on long-term curriculum development projects, focusing on editing educational materials to enhance clarity and accessibility. Translate institutional policies for parents and stakeholders, ensuring effective communication. Contribute to team efforts in refining content to support educational objectives and improve learning outcomes.
+      </li>
+      <li>
+        <strong>Montessori Assistant Teacher, Kaabe Schools (Abaarso Network)</strong><br>
+        September 2024 – December 2024<br>
+        Delivered 25 hours of weekly classroom instruction, including leading extracurricular activities, and dedicated an additional 25 hours to lesson planning, student progress tracking, and community engagement. Actively participated in Learning Communities and organized community events, ensuring all responsibilities were fulfilled prior to academic holiday breaks.
+      </li>
+      <li>
+        <strong>Academic Integrity Coordinator, Personal Project</strong><br>
+        January 2022 – Present<br>
+        Developed and facilitated workshops on academic integrity, emphasizing plagiarism prevention, initially as an intern with Barwaaqo University’s Academic Integrity Committee. Expanded this initiative post-graduation, conducting research and delivering workshops for approximately 70 students at Abaarso High School, equipping them with skills to ethically navigate academic challenges in the digital age.
+      </li>
+      <li>
+        <strong>Organizations Representative (Intern), Barwaaqo University (Abaarso Network)</strong><br>
+        January 2021 – July 2021<br>
+        Coordinated campus-wide events, including fun days and trivia nights, to enhance student engagement. Designed and managed Excel spreadsheets to organize student assignments for sports teams and clubs, ensuring participation in mandatory gym days. Proposed and implemented strategies to boost attendance in extracurricular activities, fostering a vibrant campus community.
+      </li>
+    </ul>
+
+    <h2 class="ausbildung">Education</h2>
+    <ul>
+      <li>
+        2019 – 2024: Bachelor of Education, Barwaaqo University
+      </li>
+    </ul>
+
+    <h2 class="fähigkeiten">Skills</h2>
+    <ul>
+      <li>Management Skills</li>
+      <li>Creativity</li>
+      <li>Crisis Management</li>
+      <li>Active Listening</li>
+      <li>Critical Thinking</li>
+      <li>Time Management</li>
+      <li>Leadership</li>
+      <li>Communication</li>
+      <li>Microsoft Excel</li>
+      <li>Educational Administration</li>
+      <li>Advanced Technology Skills</li>
+      <li>Mathematics</li>
+      <li>Record-Keeping</li>
+      <li>Note-Taking/Minute-Taking</li>
+    </ul>
+
+    <h2 class="kompetenzbewertung">Competency Assessment</h2>
+    <ul>
+      <li>English (B2 Level, Duolingo Certificate): ⭐️⭐️⭐️⭐️</li>
+      <li>Somali: ⭐️⭐️⭐️⭐️⭐️</li>
+      <li>Educational Content Editing: ⭐️⭐️⭐️⭐️</li>
+    </ul>
+
+    <h2 class="sonstiges">Other</h2>
+
+    <table class="table">
+      
+     
+      <tr class="motivations">
+        <th>
+          <a href="MotivationLetter.html" target="_blank"
+            >Cover letter/Diploma/Duolingo Certificate</a
+          >
+        </th>
+           <th><a href="contactme.html" target="_blank">ContactMe</a></th>
+      </tr>
+        <th>
+          <a
+            href="Documents.html"
+            target="_blank"
+            >Documents/ID</a
+          >
+        </th>
+      </tr>
+    </table>
+
+    <script>
+      // Get current date in the format: Month Day, Year (e.g., January 25, 2025)
+      const currentDate = new Date();
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      const dateString = currentDate.toLocaleDateString("de-DE", options); // Adjusting for German locale
+
+      // Display the date inside the "current-date" div
+      document.getElementById("current-date").innerText = dateString;
+    </script>
+
+    <footer>
+      <p>© Islahil Aden. All rights reserved</p>
+    </footer>
+  </body>
+</html>
